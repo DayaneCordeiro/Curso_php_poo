@@ -4,6 +4,14 @@ class Login {
     // Atributos
     private $email;
     private $senha;
+    private $nome;
+
+    // Construtor
+    public function __construct($email, $senha, $nome) {
+        $this->setEmail($email);
+        $this->setSenha($senha);
+        $this->setNome($nome);
+    }
 
     // Getters and Setters
     public function getEmail() {
@@ -41,6 +49,14 @@ class Login {
         $this->senha = $senha;
     }
 
+    public function getNome() {
+        return $this->nome;
+    }
+
+    public function setNome($nome) {
+        $this->nome = $nome;
+    }
+
     // Métodos
     public function logar() {
         if ($this->email == "teste@teste.com" && $this->senha == "123456")
@@ -50,11 +66,7 @@ class Login {
     }
 }
 
-$logar = new Login();
-
-$logar->setEmail("teste@t((este.com");
-$logar->setSenha("123456");
-
+$logar = new Login("teste@t((este.com", "123456", "Dayane Cordeiro");
 echo $logar->getEmail();
 
 $logar->logar();
